@@ -179,12 +179,15 @@ h1 {
 
 .week-tab {
   min-height: 46px;
+  padding: 7px 8px;
   border: 0;
   border-radius: 8px;
   color: var(--navy-2);
   background: transparent;
   cursor: pointer;
+  font-size: 0.875rem;
   font-weight: 800;
+  line-height: 1.25;
 }
 
 .week-tab:hover { background: #eaf1f7; }
@@ -268,7 +271,7 @@ noscript { display: block; margin: 20px; padding: 12px; color: var(--red); backg
 
 @media (max-width: 480px) {
   .week-tabs { gap: 4px; padding: 4px; }
-  .week-tab { min-height: 42px; font-size: 0.875rem; }
+  .week-tab { min-height: 48px; padding-inline: 4px; font-size: 0.72rem; }
   .hero-name { font-size: 0.6875rem; }
   .candidate-list li { padding-inline: 6px; font-size: 0.75rem; }
   .roster-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding-inline: 8px; }

@@ -107,7 +107,7 @@ function renderTabs() {
     button.type = "button";
     button.className = "week-tab";
     button.role = "tab";
-    button.textContent = `週${week}`;
+    button.textContent = DISHES[(week - 1) * 3];
     button.setAttribute("aria-selected", String(week === currentWeek));
     button.tabIndex = week === currentWeek ? 0 : -1;
     button.addEventListener("click", () => setWeek(week));
