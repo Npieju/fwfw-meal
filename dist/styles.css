@@ -167,10 +167,6 @@ h1 {
 .unit-name { overflow: hidden; font-size: 0.78rem; text-overflow: ellipsis; white-space: nowrap; }
 
 .perfect-note {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px 16px;
   margin: 0 0 10px;
   padding: 9px 13px;
   border: 1px solid #d9e6ee;
@@ -181,7 +177,9 @@ h1 {
 }
 
 .perfect-note strong { color: var(--navy); }
-.perfect-note span::before { content: "•"; margin-right: 6px; color: var(--amber); font-weight: 900; }
+.perfect-note ul { margin: 4px 0 0; padding-left: 1.35rem; }
+.perfect-note li { padding-left: 2px; }
+.perfect-note li::marker { color: var(--amber); }
 
 .week-tabs {
   display: grid;
