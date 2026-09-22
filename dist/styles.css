@@ -271,6 +271,8 @@ noscript { display: block; margin: 20px; padding: 12px; color: var(--red); backg
   .week-tab { min-height: 42px; font-size: 0.875rem; }
   .hero-name { font-size: 0.6875rem; }
   .candidate-list li { padding-inline: 6px; font-size: 0.75rem; }
-  .roster-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .roster-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding-inline: 8px; }
+  .unit-row { gap: 3px; padding-inline: 4px; }
+  .unit-name { font-size: 0.7rem; }
   .roster-actions button { min-width: 0; flex: 1; }
 }
