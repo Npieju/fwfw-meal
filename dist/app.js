@@ -87,13 +87,10 @@ function renderRoster() {
       updateActiveCount();
       renderMeals();
     });
-    const id = document.createElement("span");
-    id.className = "unit-id";
-    id.textContent = `#${character.id}`;
     const name = document.createElement("span");
     name.className = "unit-name";
     name.textContent = character.name;
-    label.append(checkbox, id, name);
+    label.append(checkbox, name);
     roster.append(label);
   }
   updateActiveCount();

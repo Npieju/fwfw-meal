@@ -20,10 +20,15 @@
     </header>
 
     <main class="app-shell">
+      <section class="workspace" aria-label="料理別候補">
+        <nav id="weekTabs" class="week-tabs" aria-label="週を選択" role="tablist"></nav>
+        <div id="weekPanel" class="meal-grid" role="tabpanel"></div>
+      </section>
+
       <aside class="roster-panel" aria-label="候補ユニット設定">
-        <details open>
+        <details>
           <summary>
-            <span>候補ユニット</span>
+            <span>オプション：候補ユニット設定</span>
             <strong id="activeCount">0 / 0</strong>
           </summary>
           <div class="roster-actions">
@@ -33,11 +38,6 @@
           <div id="roster" class="roster-list"></div>
         </details>
       </aside>
-
-      <section class="workspace" aria-label="料理別候補">
-        <nav id="weekTabs" class="week-tabs" aria-label="週を選択" role="tablist"></nav>
-        <div id="weekPanel" class="meal-grid" role="tabpanel"></div>
-      </section>
     </main>
 
     <noscript>このページを使用するにはJavaScriptを有効にしてください。</noscript>

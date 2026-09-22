@@ -71,9 +71,6 @@ h1 {
 }
 
 .app-shell {
-  display: grid;
-  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
-  gap: 18px;
   max-width: 1560px;
   margin: 0 auto;
   padding: 0 28px 36px;
@@ -84,10 +81,9 @@ h1 {
   min-width: 0;
 }
 
+.roster-panel { margin-top: 18px; }
+
 .roster-panel details {
-  position: sticky;
-  top: 16px;
-  max-height: calc(100vh - 32px);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -109,17 +105,20 @@ h1 {
 }
 
 .roster-panel summary::-webkit-details-marker { display: none; }
+.roster-panel summary span::before { content: "＋"; display: inline-block; width: 1.35em; color: #f5c86d; }
+.roster-panel details[open] summary span::before { content: "－"; }
 .roster-panel summary strong { color: #f5c86d; font-size: 0.875rem; }
 
 .roster-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: flex-end;
   gap: 8px;
   padding: 12px;
   border-bottom: 1px solid var(--line);
 }
 
 .roster-actions button {
+  min-width: 112px;
   min-height: 38px;
   border: 1px solid #bdcbd8;
   border-radius: 8px;
@@ -136,19 +135,22 @@ h1 {
 .unit-row input:focus-visible { outline: 3px solid #f0b74b; outline-offset: 2px; }
 
 .roster-list {
-  max-height: calc(100vh - 154px);
-  overflow: auto;
-  padding: 6px 10px 12px;
-  scrollbar-gutter: stable;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 6px;
+  padding: 2px 12px 14px;
 }
 
 .unit-row {
   display: grid;
-  grid-template-columns: 22px 42px 1fr;
+  grid-template-columns: 20px minmax(0, 1fr);
   align-items: center;
-  min-height: 38px;
-  padding: 4px 6px;
-  border-bottom: 1px solid #edf1f5;
+  gap: 5px;
+  min-height: 34px;
+  padding: 3px 6px;
+  border: 1px solid #e4eaf0;
+  border-radius: 7px;
+  background: #fbfcfd;
   cursor: pointer;
 }
 
@@ -162,8 +164,7 @@ h1 {
   cursor: pointer;
 }
 
-.unit-id { color: var(--muted); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
-.unit-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.unit-name { overflow: hidden; font-size: 0.78rem; text-overflow: ellipsis; white-space: nowrap; }
 
 .week-tabs {
   display: grid;
@@ -253,9 +254,7 @@ h1 {
 noscript { display: block; margin: 20px; padding: 12px; color: var(--red); background: var(--red-soft); }
 
 @media (max-width: 1100px) {
-  .app-shell { grid-template-columns: 1fr; }
-  .roster-panel details { position: static; max-height: none; }
-  .roster-list { max-height: 300px; }
+  .roster-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 
 @media (max-width: 780px) {
@@ -264,6 +263,7 @@ noscript { display: block; margin: 20px; padding: 12px; color: var(--red); backg
   .app-shell { padding: 0 12px 24px; }
   .meal-grid { grid-template-columns: 1fr; }
   .candidate-grid { min-height: 0; }
+  .roster-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 480px) {
@@ -271,4 +271,6 @@ noscript { display: block; margin: 20px; padding: 12px; color: var(--red); backg
   .week-tab { min-height: 42px; font-size: 0.875rem; }
   .hero-name { font-size: 0.6875rem; }
   .candidate-list li { padding-inline: 6px; font-size: 0.75rem; }
+  .roster-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .roster-actions button { min-width: 0; flex: 1; }
 }
