@@ -245,7 +245,7 @@ h1 {
 
 .hero-rating { min-width: 0; text-align: center; }
 .hero-name { display: block; padding: 9px 4px 5px; color: var(--navy); font-size: 0.75rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.rating-value { display: block; padding: 5px 4px 8px; font-size: 1.05rem; font-weight: 900; }
+.rating-value { display: block; padding: 4px 4px 7px; font-size: 1.3rem; font-weight: 900; line-height: 1.15; }
 .rating-4 { color: var(--green); background: var(--green-soft); }
 .rating-3 { color: var(--blue); background: var(--blue-soft); }
 .rating-2 { color: var(--amber); background: var(--amber-soft); }
@@ -259,7 +259,7 @@ h1 {
 
 .candidate-column { min-width: 0; border-right: 1px solid var(--line); }
 .candidate-column:last-child { border-right: 0; }
-.candidate-heading { margin: 0; padding: 10px 5px; color: #fff; font-size: 0.875rem; text-align: center; }
+.candidate-heading { margin: 0; padding: 8px 5px; color: #fff; font-size: 1.15rem; line-height: 1.15; text-align: center; }
 .candidate-column[data-rating="4"] .candidate-heading { background: var(--green); }
 .candidate-column[data-rating="3"] .candidate-heading { background: var(--blue); }
 .candidate-column[data-rating="2"] .candidate-heading { background: var(--amber); }

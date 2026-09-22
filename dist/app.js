@@ -38,6 +38,8 @@ const CHARACTERS = [
 const HERO_IDS = [1, 10, 19, 24];
 const HEROES = HERO_IDS.map(id => CHARACTERS.find(character => character.id === id));
 const CANDIDATES = CHARACTERS.filter(character => !HERO_IDS.includes(character.id));
+const RATING_SYMBOLS = { 4: "◎", 3: "◯", 2: "△", 1: "☓" };
+const RATING_LABELS = { 4: "最高", 3: "好き", 2: "普通", 1: "嫌い" };
 const STORAGE_KEY = "fwfw-meal-active-v1";
 const WEEK_KEY = "fwfw-meal-week-v1";
 
@@ -147,7 +149,9 @@ function renderMeals() {
       const value = document.createElement("span");
       const rating = hero.ratings[dishIndex];
       value.className = `rating-value rating-${rating}`;
-      value.textContent = String(rating);
+      value.textContent = RATING_SYMBOLS[rating];
+      value.title = RATING_LABELS[rating];
+      value.setAttribute("aria-label", RATING_LABELS[rating]);
       item.append(name, value);
       ratings.append(item);
     }
@@ -160,7 +164,8 @@ function renderMeals() {
       column.dataset.rating = String(rating);
       const title = document.createElement("h3");
       title.className = "candidate-heading";
-      title.textContent = `評価${rating}`;
+      title.textContent = RATING_SYMBOLS[rating];
+      title.title = RATING_LABELS[rating];
       const count = document.createElement("span");
       count.className = "candidate-count";
       count.textContent = `${candidates.length}人`;
